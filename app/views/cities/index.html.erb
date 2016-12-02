@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>
+    Cities
+    <a href="/cities/new" class="btn btn-lg btn-success">New City</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Actions</th>
+      </tr>
+
+      <% @cities.each do |city| %>
+      <tr>
+        <td>
+          <a href="/cities/<%= city.id %>" class="btn btn-primary">Show</a>
+          <a href="/cities/<%= city.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_city/<%= city.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
