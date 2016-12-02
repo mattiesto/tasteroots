@@ -24,7 +24,7 @@
           City
         </label>
 
-        <input type="text" id="city_id" name="city_id" placeholder="City" class="form-control" value="<%= @route.city_id %>">
+        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :created_at, @route.city_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for preference_id -->
