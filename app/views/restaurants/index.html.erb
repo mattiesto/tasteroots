@@ -16,8 +16,20 @@
 
       <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.city.created_at %></td>
-        <td><%= restaurant.preference.taste %></td>
+        <td>
+          <% if restaurant.city.present? %>
+            <a href="/cities/<%= restaurant.city.id %>">
+              <%= restaurant.city.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if restaurant.preference.present? %>
+            <a href="/preferences/<%= restaurant.preference.id %>">
+              <%= restaurant.preference.taste %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Show</a>
           <a href="/restaurants/<%= restaurant.id %>/edit" class="btn btn-warning">Edit</a>

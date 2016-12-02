@@ -16,8 +16,20 @@
 
       <% @routes.each do |route| %>
       <tr>
-        <td><%= route.city.created_at %></td>
-        <td><%= route.preference.taste %></td>
+        <td>
+          <% if route.city.present? %>
+            <a href="/cities/<%= route.city.id %>">
+              <%= route.city.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if route.preference.present? %>
+            <a href="/preferences/<%= route.preference.id %>">
+              <%= route.preference.taste %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/routes/<%= route.id %>" class="btn btn-primary">Show</a>
           <a href="/routes/<%= route.id %>/edit" class="btn btn-warning">Edit</a>

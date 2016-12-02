@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>City</dt>
-      <dd><%= @shop.city_id %></dd>
+      <dd>
+        <% if @shop.city.present? %>
+          <a href="/cities/<%= @shop.city_id %>">
+            <%= @shop.city.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Preference</dt>
-      <dd><%= @shop.preference_id %></dd>
+      <dd>
+        <% if @shop.preference.present? %>
+          <a href="/preferences/<%= @shop.preference_id %>">
+            <%= @shop.preference.taste %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

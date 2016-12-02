@@ -12,7 +12,13 @@
       <dd><%= @user.password %></dd>
 
       <dt>Preference</dt>
-      <dd><%= @user.preference_id %></dd>
+      <dd>
+        <% if @user.preference.present? %>
+          <a href="/preferences/<%= @user.preference_id %>">
+            <%= @user.preference.taste %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
