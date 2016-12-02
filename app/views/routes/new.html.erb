@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @route.errors.any? %>
+  <% @route.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Route</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_route" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for city_id -->
+      <div class="form-group">
+        <label for="city_id" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city_id" name="city_id" placeholder="City" class="form-control" value="<%= @route.city_id %>">
+      </div>
+
+      <!-- Label and input for preference_id -->
+      <div class="form-group">
+        <label for="preference_id" class="control-label">
+          Preference
+        </label>
+
+        <input type="text" id="preference_id" name="preference_id" placeholder="Preference" class="form-control" value="<%= @route.preference_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Route
+      </button>
+      or
+      <a href="/routes">Cancel</a>
+    </form>
+  </div>
+</div>
