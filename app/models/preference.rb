@@ -1,6 +1,9 @@
 class Preference < ApplicationRecord
   # Direct associations
 
+  has_many   :shops,
+             :dependent => :destroy
+
   has_many   :routes,
              :dependent => :destroy
 
