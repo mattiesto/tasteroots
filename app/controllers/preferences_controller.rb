@@ -1,6 +1,7 @@
 class PreferencesController < ApplicationController
   def index
-    @preferences = Preference.page(params[:page]).per(10)
+    @q = Preference.ransack(params[:q])
+    @preferences = @q.result(:distinct => true).includes(:users, :routes, :shops, :restaurants).page(params[:page]).per(10)
 
     render("preferences/index.html.erb")
   end

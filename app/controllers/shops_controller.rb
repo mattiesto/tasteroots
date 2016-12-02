@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.page(params[:page]).per(10)
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result(:distinct => true).includes(:preference, :city).page(params[:page]).per(10)
 
     render("shops/index.html.erb")
   end
