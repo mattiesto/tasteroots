@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Preference resource:
+  # CREATE
+  get "/preferences/new", :controller => "preferences", :action => "new"
+  post "/create_preference", :controller => "preferences", :action => "create"
+
+  # READ
+  get "/preferences", :controller => "preferences", :action => "index"
+  get "/preferences/:id", :controller => "preferences", :action => "show"
+
+  # UPDATE
+  get "/preferences/:id/edit", :controller => "preferences", :action => "edit"
+  post "/update_preference/:id", :controller => "preferences", :action => "update"
+
+  # DELETE
+  get "/delete_preference/:id", :controller => "preferences", :action => "destroy"
+  #------------------------------
+
   # Routes for the Route resource:
   # CREATE
   get "/routes/new", :controller => "routes", :action => "new"
