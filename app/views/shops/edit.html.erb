@@ -33,7 +33,7 @@
           Preference
         </label>
 
-        <input type="text" id="preference_id" name="preference_id" placeholder="Preference" class="form-control" value="<%= @shop.preference_id %>">
+        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :taste, @shop.preference_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
