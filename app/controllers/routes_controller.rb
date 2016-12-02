@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   def index
-    @routes = Route.all
+    @routes = Route.page(params[:page]).per(10)
 
     render("routes/index.html.erb")
   end

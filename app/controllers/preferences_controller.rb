@@ -1,6 +1,6 @@
 class PreferencesController < ApplicationController
   def index
-    @preferences = Preference.all
+    @preferences = Preference.page(params[:page]).per(10)
 
     render("preferences/index.html.erb")
   end
