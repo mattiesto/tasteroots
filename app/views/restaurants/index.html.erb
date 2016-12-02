@@ -16,7 +16,7 @@
 
       <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.city_id %></td>
+        <td><%= restaurant.city.created_at %></td>
         <td><%= restaurant.preference_id %></td>
         <td>
           <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Show</a>
