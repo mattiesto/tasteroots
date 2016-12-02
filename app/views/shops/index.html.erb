@@ -17,7 +17,7 @@
       <% @shops.each do |shop| %>
       <tr>
         <td><%= shop.city.created_at %></td>
-        <td><%= shop.preference_id %></td>
+        <td><%= shop.preference.taste %></td>
         <td>
           <a href="/shops/<%= shop.id %>" class="btn btn-primary">Show</a>
           <a href="/shops/<%= shop.id %>/edit" class="btn btn-warning">Edit</a>
