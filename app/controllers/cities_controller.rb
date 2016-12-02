@@ -23,7 +23,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new
-
+    @city.name = params[:name]
 
     save_status = @city.save
 
