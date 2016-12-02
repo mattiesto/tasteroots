@@ -6,6 +6,9 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @route = Route.new
+    @restaurant = Restaurant.new
+    @shop = Shop.new
     @city = City.find(params[:id])
 
     render("cities/show.html.erb")
