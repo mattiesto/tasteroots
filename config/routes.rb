@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "routes#index"
   # Routes for the City resource:
   # CREATE
   get "/cities/new", :controller => "cities", :action => "new"
