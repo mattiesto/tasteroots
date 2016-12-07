@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
 
     @restaurant.city_id = params[:city_id]
     @restaurant.preference_id = params[:preference_id]
+    @restaurant.name = params[:name]
 
     save_status = @restaurant.save
 
@@ -51,6 +52,7 @@ class RestaurantsController < ApplicationController
 
     @restaurant.city_id = params[:city_id]
     @restaurant.preference_id = params[:preference_id]
+    @restaurant.name = params[:name]
 
     save_status = @restaurant.save
 

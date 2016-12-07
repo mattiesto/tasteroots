@@ -23,6 +23,7 @@ class PreferencesController < ApplicationController
   end
 
   def create
+
     @preference = Preference.new
 
     @preference.taste = params[:taste]

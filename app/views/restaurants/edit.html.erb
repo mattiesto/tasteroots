@@ -20,11 +20,19 @@
 
       <!-- Label and input for city_id -->
       <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurant.name %>">
+      </div>
+
+      <div class="form-group">
         <label for="city_id" class="control-label">
           City
         </label>
 
-        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :created_at, @restaurant.city_id), :class => "form-control") %>
+        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name, @restaurant.city_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for preference_id -->

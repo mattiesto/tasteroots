@@ -5,21 +5,28 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd>
+        <% if @restaurant.name.present? %>
+        <%= @restaurant.name %>
+        <% end %>
+      </dd>
+      
       <dt>City</dt>
       <dd>
         <% if @restaurant.city.present? %>
-          <a href="/cities/<%= @restaurant.city_id %>">
-            <%= @restaurant.city.created_at %>
-          </a>
+        <a href="/cities/<%= @restaurant.city_id %>">
+          <%= @restaurant.city.name %>
+        </a>
         <% end %>
       </dd>
 
       <dt>Preference</dt>
       <dd>
         <% if @restaurant.preference.present? %>
-          <a href="/preferences/<%= @restaurant.preference_id %>">
-            <%= @restaurant.preference.taste %>
-          </a>
+        <a href="/preferences/<%= @restaurant.preference_id %>">
+          <%= @restaurant.preference.taste %>
+        </a>
         <% end %>
       </dd>
 
