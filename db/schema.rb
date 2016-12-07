@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 20161202220646) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "preferences", force: :cascade do |t|

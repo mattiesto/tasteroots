@@ -24,7 +24,7 @@
           City
         </label>
 
-        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :created_at, @shop.city_id), :class => "form-control") %>
+        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name, @shop.city_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for preference_id -->
@@ -33,7 +33,7 @@
           Preference
         </label>
 
-        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :taste, @shop.preference_id), :class => "form-control") %>
+        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :style, @shop.preference_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
