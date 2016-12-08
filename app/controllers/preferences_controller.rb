@@ -31,7 +31,7 @@ class PreferencesController < ApplicationController
     @preference.gender = params[:gender]
 
     save_status = @preference.save
-
+    
     if save_status == true
       referer = URI(request.referer).path
 

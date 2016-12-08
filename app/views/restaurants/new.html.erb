@@ -18,13 +18,14 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for restaurant.name -->
+      <!-- Label and input for restaurantname -->
       <div class="form-group">
         <label for="name" class="control-label">
           Name
         </label>
 
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurant.name %>">
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurantname %>">
+
       </div>
 
       <!-- Label and input for city_id -->
@@ -42,7 +43,7 @@
           Preference
         </label>
 
-        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :taste, @restaurant.preference_id), :class => "form-control") %>
+        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :taste, @restaurant.preference_id), :class => "form-control")%>
       </div>
 
       <button class="btn btn-success">

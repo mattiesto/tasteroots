@@ -18,8 +18,8 @@
         <% @restaurants.each do |restaurant| %>
         <tr>
           <td>
-            <% if restaurant.name.present? %>
-            <a href="/restaurants/<%= restaurant.id %>"><%= restaurant.name %></a>
+            <% if @restaurantname.present? %>
+            <a href="/restaurants/<%= restaurant.id %>"><%= @restaurantname %></a>
             <% end %>
           </td>
           <td>
