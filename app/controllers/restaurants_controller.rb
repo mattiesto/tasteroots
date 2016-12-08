@@ -19,21 +19,18 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @client = GooglePlaces::Client.new("AIzaSyAr2gHyzD2nSxtTiRyHJbOzgQdahrErWWs")
+    @client = GooglePlaces::Client.new("AIzaSyCrkry5COmBLJFYt60-6C4VDpQfxi10EaY")
 
-    @name = @client.spots_by_query(params[:name])
-    @restaurantname = @name[0]["name"]
-
+    search_query = "#{params[:name]} in #{City.find(params[:city_id]).name}"
+    google_search_result = @client.spots_by_query(search_query)
 
     @restaurant = Restaurant.new
 
     @restaurant.city_id = params[:city_id]
     @restaurant.preference_id = params[:preference_id]
-    @restaurant.name = @restaurantname
+    @restaurant.name = google_search_result[0]["name"]
 
     save_status = @restaurant.save
-
-
 
     if save_status == true
       referer = URI(request.referer).path
@@ -56,11 +53,16 @@ class RestaurantsController < ApplicationController
   end
 
   def update
+    @client = GooglePlaces::Client.new("AIzaSyCrkry5COmBLJFYt60-6C4VDpQfxi10EaY")
+
+    search_query = "#{params[:name]} in #{City.find(params[:city_id]).name}"
+    google_search_result = @client.spots_by_query(search_query)
+
     @restaurant = Restaurant.find(params[:id])
 
     @restaurant.city_id = params[:city_id]
     @restaurant.preference_id = params[:preference_id]
-    @restaurant.name = params[:name]
+    @restaurant.name = google_search_result[0]["name"]
 
     save_status = @restaurant.save
 

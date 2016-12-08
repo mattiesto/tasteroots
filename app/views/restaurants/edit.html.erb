@@ -18,15 +18,16 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for city_id -->
+      <!-- Label and input for restaurantname -->
       <div class="form-group">
         <label for="name" class="control-label">
           Name
         </label>
 
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurantname %>">
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurant.name %>">
       </div>
 
+      <!-- Label and input for city_id -->
       <div class="form-group">
         <label for="city_id" class="control-label">
           City

@@ -16,5 +16,9 @@ class Preference < ApplicationRecord
   # Indirect associations
 
   # Validations
+ validates :taste, presence: true
+ validates :style, presence: true
+ validates :gender, presence: true
+ validates :taste, uniqueness: {scope: [:style, :gender], message: ", Style, and Gender combination already exists!"}
 
 end
