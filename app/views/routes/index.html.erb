@@ -19,14 +19,14 @@
         <td>
           <% if route.city.present? %>
             <a href="/cities/<%= route.city.id %>">
-              <%= route.city.created_at %>
+              <%= route.city.name %>
             </a>
           <% end %>
         </td>
         <td>
           <% if route.preference.present? %>
             <a href="/preferences/<%= route.preference.id %>">
-              <%= route.preference.taste %>
+              <%= route.preference.id %>
             </a>
           <% end %>
         </td>

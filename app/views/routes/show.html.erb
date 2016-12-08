@@ -9,7 +9,7 @@
       <dd>
         <% if @route.city.present? %>
           <a href="/cities/<%= @route.city_id %>">
-            <%= @route.city.created_at %>
+            <%= @route.city.name %>
           </a>
         <% end %>
       </dd>
@@ -18,7 +18,34 @@
       <dd>
         <% if @route.preference.present? %>
           <a href="/preferences/<%= @route.preference_id %>">
+            <%= @route.preference.id %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>Taste</dt>
+      <dd>
+        <% if @route.preference.present? %>
+          <a href="/preferences/<%= @route.preference_id %>">
             <%= @route.preference.taste %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>Style</dt>
+      <dd>
+        <% if @route.preference.present? %>
+          <a href="/preferences/<%= @route.preference_id %>">
+            <%= @route.preference.style %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>Gender</dt>
+      <dd>
+        <% if @route.preference.present? %>
+          <a href="/preferences/<%= @route.preference_id %>">
+            <%= @route.preference.gender %>
           </a>
         <% end %>
       </dd>
@@ -38,3 +65,7 @@
     </div>
   </div>
 </div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVtzRykIf4huVTArD_gs6R2FbCwE1EGLY&callback=initMap">
+    </script>
