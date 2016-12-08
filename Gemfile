@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'google_places'
 
-
+gem 'geogle'
 
 gem 'jquery-ui-rails', '~> 4.2.1'
 

@@ -82,6 +82,10 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (7.1.4)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
     bootstrap3-datetimepicker-rails (4.14.30)
       momentjs-rails (>= 2.8.1)
@@ -93,6 +97,8 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     byebug (9.0.6)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -102,12 +108,15 @@ GEM
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
@@ -116,6 +125,9 @@ GEM
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    geogle (0.3.5)
+      ruby-hmac
+      virtus
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     google_places (0.32.0)
@@ -127,6 +139,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    ice_nine (0.11.2)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -210,6 +223,7 @@ GEM
       railties (>= 4.2.0, < 5.1)
     rollbar (2.13.3)
       multi_json
+    ruby-hmac (0.4.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -232,6 +246,11 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -255,6 +274,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   font-awesome-sass (~> 4.5.0)
+  geogle
   google_places
   inherited_resources!
   jbuilder (~> 2.5)

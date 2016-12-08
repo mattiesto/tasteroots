@@ -8,45 +8,45 @@
       <dt>City</dt>
       <dd>
         <% if @route.city.present? %>
-          <a href="/cities/<%= @route.city_id %>">
-            <%= @route.city.name %>
-          </a>
+        <a href="/cities/<%= @route.city_id %>">
+          <%= @route.city.name %>
+        </a>
         <% end %>
       </dd>
 
       <dt>Preference</dt>
       <dd>
         <% if @route.preference.present? %>
-          <a href="/preferences/<%= @route.preference_id %>">
-            <%= @route.preference.id %>
-          </a>
+        <a href="/preferences/<%= @route.preference_id %>">
+          <%= @route.preference.id %>
+        </a>
         <% end %>
       </dd>
 
       <dt>Taste</dt>
       <dd>
         <% if @route.preference.present? %>
-          <a href="/preferences/<%= @route.preference_id %>">
-            <%= @route.preference.taste %>
-          </a>
+        <a href="/preferences/<%= @route.preference_id %>">
+          <%= @route.preference.taste %>
+        </a>
         <% end %>
       </dd>
 
       <dt>Style</dt>
       <dd>
         <% if @route.preference.present? %>
-          <a href="/preferences/<%= @route.preference_id %>">
-            <%= @route.preference.style %>
-          </a>
+        <a href="/preferences/<%= @route.preference_id %>">
+          <%= @route.preference.style %>
+        </a>
         <% end %>
       </dd>
 
       <dt>Gender</dt>
       <dd>
         <% if @route.preference.present? %>
-          <a href="/preferences/<%= @route.preference_id %>">
-            <%= @route.preference.gender %>
-          </a>
+        <a href="/preferences/<%= @route.preference_id %>">
+          <%= @route.preference.gender %>
+        </a>
         <% end %>
       </dd>
 
@@ -66,6 +66,9 @@
   </div>
 </div>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVtzRykIf4huVTArD_gs6R2FbCwE1EGLY&callback=initMap">
-    </script>
+<div>
+  <iframe width="300" height="300" frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDqaq9-EBexFNuhZwpgM8YO08mytn9lO08&q=33,33"
+  allowfullscreen>
+</iframe>
+</div>
