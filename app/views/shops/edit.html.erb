@@ -18,13 +18,22 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
+      <!-- Label and input for shop name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @shop.name %>">
+      </div>
+
       <!-- Label and input for city_id -->
       <div class="form-group">
         <label for="city_id" class="control-label">
           City
         </label>
 
-        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :created_at, @shop.city_id), :class => "form-control") %>
+        <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name, @shop.city_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for preference_id -->
@@ -33,7 +42,7 @@
           Preference
         </label>
 
-        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :taste, @shop.preference_id), :class => "form-control") %>
+        <%= select_tag(:preference_id, options_from_collection_for_select(Preference.all, :id, :style, @shop.preference_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">

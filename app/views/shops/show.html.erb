@@ -5,11 +5,18 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd>
+        <% if @shop.name.present? %>
+            <%= @shop.name %>
+        <% end %>
+      </dd>
+
       <dt>City</dt>
       <dd>
         <% if @shop.city.present? %>
           <a href="/cities/<%= @shop.city_id %>">
-            <%= @shop.city.created_at %>
+            <%= @shop.city.name %>
           </a>
         <% end %>
       </dd>
@@ -18,7 +25,7 @@
       <dd>
         <% if @shop.preference.present? %>
           <a href="/preferences/<%= @shop.preference_id %>">
-            <%= @shop.preference.taste %>
+            <%= @shop.preference.style %>
           </a>
         <% end %>
       </dd>

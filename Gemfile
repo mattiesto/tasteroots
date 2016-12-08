@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'google_places'
+
 gem 'jquery-ui-rails', '~> 4.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -23,6 +23,7 @@ class ShopsController < ApplicationController
 
     @shop.city_id = params[:city_id]
     @shop.preference_id = params[:preference_id]
+    @shop.name = params[:name]
 
     save_status = @shop.save
 
@@ -51,6 +52,7 @@ class ShopsController < ApplicationController
 
     @shop.city_id = params[:city_id]
     @shop.preference_id = params[:preference_id]
+    @shop.name = params[:name]
 
     save_status = @shop.save
 

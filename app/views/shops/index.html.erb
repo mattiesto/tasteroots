@@ -9,6 +9,7 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Name</th>
         <th>City</th>
         <th>Preference</th>
         <th>Actions</th>
@@ -17,21 +18,25 @@
       <% @shops.each do |shop| %>
       <tr>
         <td>
+          <% if shop.name.present? %>
+          <a href="/shops/<%= shop.id %>"><%= shop.name %></a>
+          <% end %>
+        </td>
+        <td>
           <% if shop.city.present? %>
-            <a href="/cities/<%= shop.city.id %>">
-              <%= shop.city.created_at %>
-            </a>
+          <a href="/cities/<%= shop.city.id %>">
+            <%= shop.city.name %>
+          </a>
           <% end %>
         </td>
         <td>
           <% if shop.preference.present? %>
-            <a href="/preferences/<%= shop.preference.id %>">
-              <%= shop.preference.taste %>
-            </a>
+          <a href="/preferences/<%= shop.preference.id %>">
+            <%= shop.preference.style %>
+          </a>
           <% end %>
         </td>
         <td>
-          <a href="/shops/<%= shop.id %>" class="btn btn-primary">Show</a>
           <a href="/shops/<%= shop.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_shop/<%= shop.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
