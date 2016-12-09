@@ -65,6 +65,6 @@
   width="600"
   height="450"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDqaq9-EBexFNuhZwpgM8YO08mytn9lO08&origin=200+E+Randolph+Chicago&destination=1849+W+North+Ave+60622&waypoints=cumin+restaurant+chicago" allowfullscreen>
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDqaq9-EBexFNuhZwpgM8YO08mytn9lO08&origin=place_id:<%= @route.preference.shops.first.place_id%>&waypoints=place_id:<%= @route.preference.shops.second.place_id%>|place_id:<%= @route.preference.restaurants.first.place_id%>&destination=place_id:<%= @route.preference.shops.third.place_id%>" allowfullscreen>
   </iframe>
 </div>

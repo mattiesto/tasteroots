@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
 
   def create
 
-    @client = GooglePlaces::Client.new("AIzaSyCrkry5COmBLJFYt60-6C4VDpQfxi10EaY")
+    @client = GooglePlaces::Client.new("AIzaSyB5YsEmheesw4ZDjNcD3W4D7OqmegtDcIc")
 
     search_query = "#{params[:name]} in #{City.find(params[:city_id]).name}"
     google_search_result = @client.spots_by_query(search_query)
@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
     @shop.city_id = params[:city_id]
     @shop.preference_id = params[:preference_id]
     @shop.name = google_search_result[0]["name"]
+    @shop.place_id = google_search_result[0]["place_id"]
 
     save_status = @shop.save
 
@@ -54,7 +55,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-    @client = GooglePlaces::Client.new("AIzaSyCrkry5COmBLJFYt60-6C4VDpQfxi10EaY")
+    @client = GooglePlaces::Client.new("AIzaSyB5YsEmheesw4ZDjNcD3W4D7OqmegtDcIc")
 
     search_query = "#{params[:name]} in #{City.find(params[:city_id]).name}"
     google_search_result = @client.spots_by_query(search_query)
@@ -64,6 +65,7 @@ class ShopsController < ApplicationController
     @shop.city_id = params[:city_id]
     @shop.preference_id = params[:preference_id]
     @shop.name = google_search_result[0]["name"]
+    @shop.place_id = google_search_result[0]["place_id"]
 
     save_status = @shop.save
 
