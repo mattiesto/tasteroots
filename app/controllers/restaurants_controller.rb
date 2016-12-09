@@ -29,6 +29,7 @@ class RestaurantsController < ApplicationController
     @restaurant.city_id = params[:city_id]
     @restaurant.preference_id = params[:preference_id]
     @restaurant.name = google_search_result[0]["name"]
+    @restaurant.place_id = google_search_result[0]["id"]
 
     save_status = @restaurant.save
 

@@ -52,23 +52,19 @@
 
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/routes" class="btn btn-primary">
+    <div>
+      <a href="/routes" class="btn btn-primary btn-block">
         Back
-      </a>
-      <a href="/routes/<%= @route.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_route/<%= @route.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
       </a>
     </div>
   </div>
 </div>
 
 <div>
-  <iframe width="300" height="300" frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDqaq9-EBexFNuhZwpgM8YO08mytn9lO08&q=33,33"
-  allowfullscreen>
-</iframe>
+  <iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDqaq9-EBexFNuhZwpgM8YO08mytn9lO08&origin=200+E+Randolph+Chicago&destination=1849+W+North+Ave+60622&waypoints=cumin+restaurant+chicago" allowfullscreen>
+  </iframe>
 </div>
